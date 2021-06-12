@@ -1,19 +1,19 @@
 <template>
   <div class="w-full">
     <div v-if="$fetchState.pending" class="pending">
-      <p class="text-xl mt-2 lg:text-3xl lg:mt-5" v-if="$fetchState.pending">
+      <p v-if="$fetchState.pending" class="text-xl mt-2 lg:text-3xl lg:mt-5">
         Wczytuje dane...
       </p>
-      <p class="text-xl mt-2 lg:text-3xl lg:mt-5" v-else-if="$fetchState.error">
+      <p v-else-if="$fetchState.error" class="text-xl mt-2 lg:text-3xl lg:mt-5">
         Upss , nie udało się pobrać danych :(
       </p>
     </div>
 
     <div class="items">
       <NuxtLink
-        :to="`/portfolio/${item.id}`"
         v-for="item of items"
-        v-bind:key="item.id"
+        :key="item.id"
+        :to="`/portfolio/${item.id}`"
         class="item hover:opacity-85"
         :style="{
           backgroundImage: `url(${item.better_featured_image.source_url})`,

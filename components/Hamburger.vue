@@ -13,17 +13,16 @@
 
 <script>
 export default {
+  computed: {
+    isVisible() {
+      return this.$store.state.isMenuHidden
+    },
+  },
   methods: {
     handleClick(e) {
       // const hamburger = document.querySelector('.hamburger')
       // hamburger.classList.toggle('is-active')
       this.$store.commit('toggleMenuVisible')
-    },
-  },
-
-  computed: {
-    isVisible() {
-      return this.$store.state.isMenuHidden
     },
   },
 }

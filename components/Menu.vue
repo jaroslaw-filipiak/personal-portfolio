@@ -1,11 +1,11 @@
 <template>
-  <div class="main-menu" v-bind:class="{ hidden: isHidden }">
+  <div class="main-menu" :class="{ hidden: isHidden }">
     <div class="d-flex flex-column w-full h-screen">
       <div class="menu-item">
         <NuxtLink
           class="flex items-center justify-center"
-          @click.native="handleClick"
           to="/about"
+          @click.native="handleClick"
           >O mnie</NuxtLink
         >
       </div>
@@ -13,8 +13,8 @@
       <div class="menu-item">
         <NuxtLink
           class="min-w-full flex items-center justify-center"
-          @click.native="handleClick"
           to="/"
+          @click.native="handleClick"
           >Portfolio</NuxtLink
         >
       </div>
