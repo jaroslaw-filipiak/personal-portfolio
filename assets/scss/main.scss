@@ -1,0 +1,22 @@
+@import './hamburgers/hamburgers.scss';
+
+button:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #272727;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  border-left: 1px solid rgba(255, 255, 255, 0.253);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(66, 66, 66);
+}
