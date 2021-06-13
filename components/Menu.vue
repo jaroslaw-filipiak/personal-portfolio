@@ -71,7 +71,20 @@ export default {
 }
 
 .contact-info a {
-  @apply hover:underline relative mb-12 mt-12;
+  @apply relative mb-12 mt-12;
+  &:after {
+    content: '';
+    display: block;
+    height: 3px;
+    @apply absolute -bottom-3 bg-yellow-300 w-0 transition-all;
+  }
+
+  &:hover {
+    &:after {
+      content: '';
+      @apply w-full;
+    }
+  }
 }
 
 .contact-info span {

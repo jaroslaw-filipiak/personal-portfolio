@@ -46,7 +46,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-buil d
   build: {},
-  router: {
-    base: '/test/',
-  },
+  // router: {
+  //   base: '/test/',
+  // },
 }

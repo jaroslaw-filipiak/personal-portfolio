@@ -3,8 +3,11 @@
     <div class="portfolio-item--cover">
       <a
         v-if="item.acf.behance_link"
-        class="absolute bottom-0 left-0 block p-4 bg-red-800"
-        href="#"
+        class="absolute bottom-0 left-0 block p-4"
+        :href="`${item.acf.behance_link}`"
+        :style="{
+          backgroundColor: `${item.acf.behance_kolor}`,
+        }"
       >
         {{ item.acf.behance_link }}</a
       >
@@ -14,6 +17,7 @@
         :href="`${item.acf.zobacz_strone_www}`"
         :style="{
           backgroundColor: `${item.acf.strona_www_link_kolor}`,
+          color: `${item.acf.www_txt_color}`,
         }"
       >
         Zobacz stronę www</a
