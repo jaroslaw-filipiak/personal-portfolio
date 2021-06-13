@@ -32,6 +32,7 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -49,4 +50,8 @@ export default {
   // router: {
   //   base: '/test/',
   // },
+
+  googleAnalytics: {
+    id: 'G-7EX7BQZN1K',
+  },
 }
