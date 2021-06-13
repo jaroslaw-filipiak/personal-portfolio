@@ -18,7 +18,7 @@
       >
         Zobacz stronę www</a
       >
-      <img :src="`${item.acf.header_image}`" alt="" />
+      <img :src="`${item.acf.header_image}.webp`" alt="" />
     </div>
     <div class="portfolio-item--info">
       <h1 class="text-4xl mb-7">{{ item.title.rendered }}</h1>

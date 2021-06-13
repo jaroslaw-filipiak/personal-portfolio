@@ -16,7 +16,7 @@
         :to="`/portfolio/${item.id}`"
         class="item hover:opacity-85"
         :style="{
-          backgroundImage: `url(${item.better_featured_image.source_url})`,
+          backgroundImage: `url(${item.better_featured_image.source_url}.webp)`,
         }"
       >
         <p class="bg-dark-2 p-1 pl-5 pr-5">{{ item.title.rendered }}</p>
