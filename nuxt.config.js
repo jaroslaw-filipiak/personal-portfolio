@@ -6,6 +6,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Jarosław Filipiak | designer & front-end developer',
+    'google-site-verification': 'W-qUXQGw2KAvWh5Y72PI2PLI1aY6ZcwGUbApZBoQdyM',
     htmlAttrs: {
       lang: 'pl',
     },
