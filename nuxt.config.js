@@ -52,6 +52,6 @@ export default {
   // },
 
   googleAnalytics: {
-    id: 'G-7EX7BQZN1K',
+    id: 'UA-57493749-5',
   },
 }
