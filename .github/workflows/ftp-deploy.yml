@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Use Node.js 12
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2.3.0
         with:
          node-version: '12'
 
