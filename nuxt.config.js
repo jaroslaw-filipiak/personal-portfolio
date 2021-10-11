@@ -3,6 +3,10 @@ export default {
   target: 'static',
   ssr: false,
 
+  generate: {
+    subFolders: false,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Jarosław Filipiak | designer & front-end developer',
