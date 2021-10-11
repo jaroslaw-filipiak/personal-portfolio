@@ -13,6 +13,7 @@
       <NuxtLink
         v-for="item of items"
         :key="item.id"
+        prefetch
         :to="`/portfolio/${item.id}`"
         class="item hover:opacity-85"
         :style="{
