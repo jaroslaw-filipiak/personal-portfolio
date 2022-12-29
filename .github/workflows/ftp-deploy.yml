@@ -9,10 +9,10 @@ jobs:
       - name: 🚚 Checkout
         uses: actions/checkout@master
 
-      - name: Use Node.js 12
+      - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
-         node-version: '12'
+         node-version: '16'
 
       - name: Install dependencies
         run: yarn
