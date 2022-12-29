@@ -7,20 +7,19 @@ export default {
         subFolders: false,
     },
 
-    // Global page headers: https://go.nuxtjs.dev/config-head
-    // head: {
-    //     title: 'Projektowanie stron www -  tylko profesjonalne strony firmowe ',
-    //     'google-site-verification': 'W-qUXQGw2KAvWh5Y72PI2PLI1aY6ZcwGUbApZBoQdyM',
-    //     htmlAttrs: {
-    //         lang: 'pl',
-    //     },
-    //     meta: [
-    //         { charset: 'utf-8' },
-    //         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    //         { hid: 'description', name: 'description', content: '' },
-    //     ],
-    //     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    // },
+    head: {
+        title: 'Projektowanie stron www -  tylko profesjonalne strony firmowe ',
+        'google-site-verification': 'W-qUXQGw2KAvWh5Y72PI2PLI1aY6ZcwGUbApZBoQdyM',
+        htmlAttrs: {
+            lang: 'pl',
+        },
+        meta: [
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { hid: 'description', name: 'description', content: '' },
+        ],
+        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: ['~/assets/scss/main.scss'],
