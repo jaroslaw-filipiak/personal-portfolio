@@ -1,5 +1,10 @@
 @import './hamburgers/hamburgers.scss';
 
+
+html  , body {
+	font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
 button:focus {
   outline: none;
 }

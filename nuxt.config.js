@@ -75,7 +75,21 @@ export default {
         // https://go.nuxtjs.dev/tailwindcss
         '@nuxtjs/tailwindcss',
         '@nuxtjs/google-analytics',
+        '@nuxtjs/google-fonts',
     ],
+
+    googleFonts: {
+        download: true,
+        prefetch: true,
+        families: {
+            'Atkinson+Hyperlegible': {
+                wght: [400, 700],
+            },
+            Atkinson: {
+                wght: [400, 700],
+            },
+        },
+    },
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [

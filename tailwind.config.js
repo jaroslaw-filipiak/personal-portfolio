@@ -15,6 +15,9 @@ module.exports = {
             screens: {
                 '3xl': '1900px',
             },
+            fontFamily: {
+                Atkinson: ['"Atkinson Hyperlegible"', 'sans-serif'],
+            },
         },
     },
     variants: {
