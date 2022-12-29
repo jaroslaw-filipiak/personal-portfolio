@@ -44,7 +44,14 @@ export default {
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
         '@nuxt/http',
+        // '@nuxtjs/robots',
+        '@nuxtjs/sitemap',
     ],
+
+    sitemap: {
+        hostname: 'https://j-filipiak.pl',
+        // options
+    },
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {},
