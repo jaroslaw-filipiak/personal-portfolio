@@ -1,6 +1,6 @@
 export default {
     // Target: https://go.nuxtjs.dev/config-target
-    target: 'static',
+    target: 'server',
     ssr: true,
 
     generate: {
@@ -44,9 +44,14 @@ export default {
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
         '@nuxt/http',
-        // '@nuxtjs/robots',
+        '@nuxtjs/robots',
         '@nuxtjs/sitemap',
     ],
+
+    robots: {
+        UserAgent: '*',
+        Sitemap: 'https://j-filipiak.pl/sitemap.xml',
+    },
 
     sitemap: {
         hostname: 'https://j-filipiak.pl',
