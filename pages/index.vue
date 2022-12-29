@@ -91,6 +91,7 @@ import eondThumb from 'assets/uploads/2020/07/eond-thumb.jpg';
 import knotsThumb from 'assets/uploads/2020/03/23knots-thumbnail.jpg';
 import whatAboutThumb from 'assets/uploads/2020/03/whatabout.jpg';
 export default {
+    transition: 'home',
     data() {
         return {
             siborsoft: siborsoftThumb,
@@ -142,5 +143,14 @@ export default {
 }
 .items {
     @apply w-full min-w-full flex flex-wrap justify-start items-center sm:-mx-2 mb-8 mt-20 lg:justify-center;
+}
+
+.home-enter-active,
+.home-leave-active {
+    transition: opacity 0.5s;
+}
+.home-enter,
+.home-leave-active {
+    opacity: 0;
 }
 </style>
