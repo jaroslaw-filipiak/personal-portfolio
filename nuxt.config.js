@@ -85,9 +85,6 @@ export default {
             'Atkinson+Hyperlegible': {
                 wght: [400, 700],
             },
-            Atkinson: {
-                wght: [400, 700],
-            },
         },
     },
 
