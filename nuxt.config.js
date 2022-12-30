@@ -121,7 +121,8 @@ export default {
         id: 'G-X4MDTE1EBE',
     },
     'google-gtag': {
-        id: 'G-X4MDTE1EBE',
+        // id: 'G-X4MDTE1EBE',
+        id: 'GTM-M7H5MHM',
     },
     loading: {
         color: 'DodgerBlue',
