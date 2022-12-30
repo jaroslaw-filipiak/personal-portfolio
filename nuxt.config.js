@@ -118,10 +118,10 @@ export default {
     // },
 
     googleAnalytics: {
-        id: 'UA-57493749-5',
+        id: 'G-X4MDTE1EBE',
     },
     'google-gtag': {
-        id: 'UA-57493749-5',
+        id: 'G-X4MDTE1EBE',
     },
     loading: {
         color: 'DodgerBlue',
