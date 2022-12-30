@@ -12,6 +12,12 @@
                 <a class="block text-xs dont-underline opacity-70 hover:opacity-100" href="mailto:info@j-filipiak.pl"
                     >info@j-filipiak.pl</a
                 >
+                <a
+                    target="_blank"
+                    class="block text-xs dont-underline opacity-70 hover:opacity-100"
+                    href="https://calendly.com/jaroslaw-filipiak/30minmeeting"
+                    >Google meet</a
+                >
             </div>
         </div>
 
