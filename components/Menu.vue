@@ -15,11 +15,8 @@
         </div>
 
         <div class="contact-info">
-            <a class="text-3xl mt-7 block mr-8" href="mailto:info@j-filipiak.pl"
-                >info@j-filipiak.pl
-                <span>Napisz do mnie maila</span>
-            </a>
-            <a class="text-3xl mt-7 block" href="tel:663568828">663 568 828 <span>Zadzwoń do mnie</span> </a>
+            <a class="text-3xl mt-7 block" href="mailto:info@j-filipiak.pl">info@j-filipiak.pl </a>
+            <a class="text-3xl mt-7 block" href="tel:663568828">663 568 828</a>
         </div>
     </div>
 </template>
@@ -33,7 +30,6 @@ export default {
     },
     methods: {
         handleClick() {
-            console.log('click in nuxt link');
             this.$store.commit('toggleMenuVisible');
         },
     },
@@ -53,7 +49,7 @@ export default {
 }
 
 .main-menu a {
-    @apply mx-auto text-center  pl-10 lg:pl-0;
+    @apply mx-auto text-center;
 }
 .menu-is-hidden {
     display: none !important;
@@ -69,22 +65,5 @@ export default {
 
 .contact-info a {
     @apply relative mb-12 mt-12;
-    &:after {
-        content: '';
-        display: block;
-        height: 3px;
-        @apply absolute -bottom-3 bg-yellow-300 w-0 transition-all;
-    }
-
-    &:hover {
-        &:after {
-            content: '';
-            @apply w-full;
-        }
-    }
-}
-
-.contact-info span {
-    @apply absolute -left-16 bg-yellow-300 p-1 text-sm -top-9 block w-full text-dark-1 font-semibold;
 }
 </style>

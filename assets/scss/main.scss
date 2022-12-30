@@ -3,17 +3,8 @@
 
 html  , body {
 	font-family: 'Atkinson Hyperlegible', sans-serif;
-	
 }
 
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.5s;
-}
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
 
 button:focus {
   outline: none;
@@ -35,3 +26,16 @@ button:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(66, 66, 66);
 }
+
+
+// default - global transiton
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
