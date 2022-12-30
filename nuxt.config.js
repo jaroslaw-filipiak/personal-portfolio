@@ -95,6 +95,7 @@ export default {
         '@nuxt/http',
         '@nuxtjs/robots',
         '@nuxtjs/sitemap',
+        '@nuxtjs/google-gtag',
     ],
 
     robots: {
@@ -117,6 +118,9 @@ export default {
     // },
 
     googleAnalytics: {
+        id: 'UA-57493749-5',
+    },
+    'google-gtag': {
         id: 'UA-57493749-5',
     },
     loading: {
