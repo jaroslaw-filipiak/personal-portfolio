@@ -1,9 +1,7 @@
 <template>
     <div class="page-content">
-        <div class="header">
-            <h1 class="text-4xl lg:text-7xl mt-2 lg:mt-5">Projektowanie stron internetowych</h1>
-            <h2 class="text-xl mt-2 lg:text-3xl lg:mt-5">Projektuje oraz wdrażam profesjonalne strony internetowe</h2>
-        </div>
+        <Hero />
+
         <!-- <Items /> -->
         <div class="w-full">
             <div class="items">
@@ -90,6 +88,7 @@ import lukasiukThumb from 'assets/uploads/2020/07/lukasiuk-thumb.jpg';
 import eondThumb from 'assets/uploads/2020/07/eond-thumb.jpg';
 import knotsThumb from 'assets/uploads/2020/03/23knots-thumbnail.jpg';
 import whatAboutThumb from 'assets/uploads/2020/03/whatabout.jpg';
+
 export default {
     data() {
         return {
@@ -118,7 +117,7 @@ export default {
 
 <style lang="scss">
 .page-content {
-    @apply bg-dark-2 min-h-screen flex flex-col items-start  text-white pt-28;
+    @apply min-h-screen flex flex-col items-start  text-white;
 }
 
 .header {

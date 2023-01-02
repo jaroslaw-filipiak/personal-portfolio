@@ -3,7 +3,11 @@
 
 html  , body {
 	font-family: 'Atkinson Hyperlegible', sans-serif;
+	background-image: url('assets/uploads/bg-black.jpg');
+	@apply bg-cover bg-fixed bg-no-repeat;
 }
+
+
 
 
 button:focus {

@@ -82,6 +82,6 @@ export default {};
     @apply text-white pt-9 pr-7 pl-7 lg:w-1/2 xl:pr-1 2xl:pr-8 pb-10;
 }
 .about--right {
-    @apply bg-dark-1 lg:h-screen lg:fixed lg:right-0 lg:top-0  2xl:w-5/12 2xl:flex 2xl:items-center 2xl:justify-center;
+    @apply bg-black lg:h-screen lg:fixed lg:right-0 lg:top-0  2xl:w-5/12 2xl:flex 2xl:items-center 2xl:justify-center;
 }
 </style>
