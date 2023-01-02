@@ -24,7 +24,7 @@ export default {
         gsap.registerPlugin(ScrollTrigger);
         const scroll = new LocomotiveScroll({
             el: document.querySelector('.smooth-scroll'),
-            smooth: true,
+            smooth: false,
         });
         scroll.on('scroll', ScrollTrigger.update);
 
