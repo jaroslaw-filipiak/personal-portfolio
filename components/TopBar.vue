@@ -41,7 +41,9 @@ export default {
 }
 
 .top-bar {
-    @apply bg-transparent text-white w-screen h-11 fixed left-0 top-0 p-8 flex items-center justify-between z-20;
+    @apply text-white w-screen h-11 fixed left-0 top-0 p-8 flex items-center justify-between z-20;
+
+    background-color: transparent;
 
     &--contact-wrapper {
         position: relative;

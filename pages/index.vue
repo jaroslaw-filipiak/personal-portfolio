@@ -1,9 +1,14 @@
 <template>
     <div class="page-content">
         <Hero />
+        <Offer />
 
         <!-- <Items /> -->
         <div class="w-full">
+            <div class="section--title w-10/12 mx-auto mt-36">
+                <h3>Wybrane realizacje</h3>
+                <img src="~/assets/uploads/smush.svg" alt="" />
+            </div>
             <div class="items">
                 <!-- siborsoft -->
                 <NuxtLink
@@ -89,6 +94,8 @@ import eondThumb from 'assets/uploads/2020/07/eond-thumb.jpg';
 import knotsThumb from 'assets/uploads/2020/03/23knots-thumbnail.jpg';
 import whatAboutThumb from 'assets/uploads/2020/03/whatabout.jpg';
 
+import gsap from 'gsap';
+
 export default {
     data() {
         return {
@@ -111,6 +118,26 @@ export default {
                     'Profesjonalne strony www. 10 lat doświadczenia. Nowoczesne strony zoptymalizowane pod Google. Optymalizacja UX. Bezpłatna Wycena - Poproś o indywidualną wycenę!. Szybki kontakt',
             },
         ],
+    },
+
+    mounted() {},
+
+    methods: {
+        gsapTopBarAnim() {
+            gsap.to('.top-bar', {
+                backgroundColor: '#000',
+                immediateRender: false,
+                scrollTrigger: {
+                    id: 'test',
+                    trigger: '.hero h1',
+                    scroller: '.smooth-scroll',
+                    scrub: true,
+                    start: 'top 30%',
+                    end: 'top 10%',
+                    markers: false,
+                },
+            });
+        },
     },
 };
 </script>

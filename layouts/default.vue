@@ -20,6 +20,13 @@ export default {
         };
     },
 
+    watch: {
+        $route(to, from) {
+            console.log('route change to', to);
+            console.log('route change from', from);
+        },
+    },
+
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
         const scroll = new LocomotiveScroll({
@@ -51,5 +58,16 @@ export default {
 <style lang="scss">
 .content {
     @apply 3xl:container 3xl:mx-auto min-h-screen;
+}
+
+.section--title {
+    @apply pb-9;
+
+    h3 {
+        @apply text-5xl;
+    }
+    img {
+        @apply relative lg:left-48 top-3;
+    }
 }
 </style>

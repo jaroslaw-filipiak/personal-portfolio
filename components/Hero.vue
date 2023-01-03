@@ -19,7 +19,7 @@ export default {};
 
 <style lang="scss" scoped>
 .hero {
-    @apply w-full h-screen flex flex-col items-center justify-center pl-8;
+    @apply w-full h-screen flex flex-col items-center justify-center pl-8 pr-8;
     text-align: left;
 
     h2 {
