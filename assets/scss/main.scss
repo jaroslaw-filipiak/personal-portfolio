@@ -2,10 +2,17 @@
 @import './hamburgers/hamburgers.scss';
 
 
+
+html {
+	scroll-behavior: smooth;
+}
 html  , body {
-	font-family: 'Atkinson Hyperlegible', sans-serif;
-	background-image: url('assets/uploads/bg-black.jpg');
-	@apply bg-cover bg-fixed bg-no-repeat;
+	// font-family: 'Atkinson Hyperlegible', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	// background-image: url('assets/uploads/bg-black.jpg');
+	@apply bg-cover bg-fixed bg-no-repeat bg-black;
+	@apply font-OpenSans;
+	
 }
 
 

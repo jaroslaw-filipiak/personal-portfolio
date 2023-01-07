@@ -1,6 +1,6 @@
 <template>
     <button
-        class="hamburger hamburger--vortex lg:hidden z-30"
+        class="hamburger hamburger--vortex z-30"
         :class="{ 'is-active': !isVisible }"
         type="button"
         @click="handleClick"

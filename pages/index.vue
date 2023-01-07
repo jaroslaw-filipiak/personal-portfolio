@@ -3,7 +3,6 @@
         <Hero />
         <Offer />
 
-        <!-- <Items /> -->
         <div class="w-full">
             <div class="section--title w-10/12 mx-auto mt-36">
                 <h3>Wybrane realizacje</h3>
@@ -83,6 +82,8 @@
                 </NuxtLink>
             </div>
         </div>
+
+        <Cta />
     </div>
 </template>
 
@@ -93,8 +94,6 @@ import lukasiukThumb from 'assets/uploads/2020/07/lukasiuk-thumb.jpg';
 import eondThumb from 'assets/uploads/2020/07/eond-thumb.jpg';
 import knotsThumb from 'assets/uploads/2020/03/23knots-thumbnail.jpg';
 import whatAboutThumb from 'assets/uploads/2020/03/whatabout.jpg';
-
-import gsap from 'gsap';
 
 export default {
     data() {
@@ -122,23 +121,7 @@ export default {
 
     mounted() {},
 
-    methods: {
-        gsapTopBarAnim() {
-            gsap.to('.top-bar', {
-                backgroundColor: '#000',
-                immediateRender: false,
-                scrollTrigger: {
-                    id: 'test',
-                    trigger: '.hero h1',
-                    scroller: '.smooth-scroll',
-                    scrub: true,
-                    start: 'top 30%',
-                    end: 'top 10%',
-                    markers: false,
-                },
-            });
-        },
-    },
+    methods: {},
 };
 </script>
 

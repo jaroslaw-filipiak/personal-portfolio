@@ -6,19 +6,21 @@
         </div>
 
         <div class="offer--items mt-20">
-            <div class="offer--row">
-                <div class="w-7/12">
-                    <h4>Projektowanie graficzne</h4>
-                </div>
-                <div class="w-full lg:w-4/12">
-                    <ul>
-                        <li>
-                            <a href="">Projektowanie stron internetowych</a>
-                        </li>
-                        <li>
-                            <a href="">Projektowanie aplikacji mobilnych</a>
-                        </li>
-                    </ul>
+            <div class="offer--row--wrapper">
+                <div class="offer--row">
+                    <div class="w-7/12">
+                        <h4>Projektowanie graficzne</h4>
+                    </div>
+                    <div class="w-full lg:w-4/12">
+                        <ul>
+                            <li>
+                                <a href="">Projektowanie stron internetowych</a>
+                            </li>
+                            <li>
+                                <a href="">Projektowanie aplikacji mobilnych</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -66,7 +68,7 @@ export default {};
 
 <style lang="scss">
 .offer {
-    @apply w-full lg:w-10/12 mx-auto pl-8 pr-8;
+    @apply w-full lg:w-10/12 mx-auto pl-8 pr-8 pt-20;
 
     &--row {
         @apply border-t flex flex-col lg:flex-row items-start lg:items-center p-8;
@@ -76,10 +78,14 @@ export default {};
         }
 
         li {
-            @apply pb-4 text-xl;
+            @apply pb-4 text-xl flex items-start;
 
             a {
                 @apply cursor-default pointer-events-none;
+            }
+
+            svg {
+                @apply mr-2;
             }
         }
     }

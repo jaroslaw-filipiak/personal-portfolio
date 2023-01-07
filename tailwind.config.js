@@ -12,12 +12,14 @@ module.exports = {
             colors: {
                 'dark-1': '#202020',
                 'dark-2': '#242424',
+                yellow: '#E9FB18',
             },
             screens: {
                 '3xl': '1900px',
             },
             fontFamily: {
                 Atkinson: ['"Atkinson Hyperlegible"', 'sans-serif'],
+                OpenSans: ['"Open Sans"', 'sans-serif'],
             },
         },
     },

@@ -1,8 +1,10 @@
 <template>
     <div class="hero">
         <div>
-            <h1 class="text-xl lg:text-3xl mt-2 lg:font-bold">Projektowanie stron internetowych</h1>
-            <h2 class="text-5xl lg:text-7xl mt-2 font-normal">
+            <h1 data-scroll data-scroll-speed="2" class="text-xl lg:text-3xl mt-2 lg:font-bold">
+                Projektowanie stron internetowych
+            </h1>
+            <h2 data-scroll data-scroll-speed="4" class="text-5xl lg:text-7xl mt-2 font-normal">
                 Projektuje oraz wdrażam profesjonalne strony internetowe
                 <span>
                     <p>i nie tylko</p>
@@ -19,6 +21,9 @@ export default {};
 
 <style lang="scss" scoped>
 .hero {
+    // background-image: url('assets/uploads/bg-black.jpg');
+    @apply bg-cover bg-fixed bg-no-repeat bg-black;
+
     @apply w-full h-screen flex flex-col items-center justify-center pl-8 pr-8;
     text-align: left;
 

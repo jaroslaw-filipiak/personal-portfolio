@@ -81,10 +81,15 @@ export default {
     googleFonts: {
         download: true,
         prefetch: true,
+        overwriting: true,
         families: {
             'Atkinson+Hyperlegible': {
                 wght: [400, 700],
             },
+            'Open Sans': {
+                wght: [400, 700],
+            },
+            // Lato: [100, 300, 400],
         },
     },
 

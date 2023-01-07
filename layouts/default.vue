@@ -51,13 +51,70 @@ export default {
             // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
             pinType: document.querySelector('.smooth-scroll').style.transform ? 'transform' : 'fixed',
         });
+
+        this.gsapTopBarAnim();
+        this.changeJaroslawFilipiakToJF();
+        this.showCTAlink();
+        this.textReveal();
+    },
+
+    methods: {
+        textReveal() {},
+        changeLogoTextContent(text) {
+            const logo = document.querySelector('.gsap-change-fullname-to-sign');
+            logo.innerHTML = text;
+        },
+        changeJaroslawFilipiakToJF() {
+            gsap.to('.gsap-change-fullname-to-sign', {
+                // backgroundColor: '#000',
+                immediateRender: false,
+                scrollTrigger: {
+                    trigger: '.hero h1',
+                    scroller: '.smooth-scroll',
+                    scrub: true,
+                    start: 'top 30%',
+                    end: 'top 10%',
+                    markers: false,
+                    onEnter: () => this.changeLogoTextContent('JF'),
+                    onLeaveBack: () => this.changeLogoTextContent('Jarosław Filipiak'),
+                },
+            });
+        },
+        showCTAlink() {
+            gsap.to('.gsap-cta-link', {
+                opacity: 1,
+                immediateRender: false,
+                scrollTrigger: {
+                    trigger: '.hero h1',
+                    scroller: '.smooth-scroll',
+                    scrub: true,
+                    start: 'top 30%',
+                    end: 'top 20%',
+                    markers: false,
+                },
+            });
+        },
+        gsapTopBarAnim() {
+            gsap.to('.top-bar', {
+                backgroundColor: '#000',
+                immediateRender: false,
+                scrollTrigger: {
+                    trigger: '.hero h1',
+                    scroller: '.smooth-scroll',
+                    scrub: true,
+                    start: 'top 30%',
+                    end: 'top 10%',
+                    markers: false,
+                },
+            });
+        },
     },
 };
 </script>
 
 <style lang="scss">
 .content {
-    @apply 3xl:container 3xl:mx-auto min-h-screen;
+    // @apply 3xl:container 3xl:mx-auto min-h-screen;
 }
 
 .section--title {
