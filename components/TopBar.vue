@@ -21,7 +21,7 @@
 
 			TODO: trzeba wrócić do widoku bezpłatna konsultacja + menu 
 			w momencie gdy uporządkuje full screen menu , na chwilę obecną
-			link do kontaktowej storny z tego względu, że nie mam menu + wyłączony hamburger
+			link do kontaktowej strony z tego względu, że nie mam menu + wyłączony hamburger
 		 -->
 
         <!-- <div class="top-bar--right">
@@ -32,6 +32,9 @@
         </div> -->
 
         <div class="top-bar--right">
+            <NuxtLink class="uppercase text-xs font-Atkinson hidden lg:block gsap-cta-link" style="opacity: 0" to="#cta"
+                >Bezpłatna konsultacja</NuxtLink
+            >
             <NuxtLink
                 class="uppercase text-xs font-Atkinson hidden lg:block gsap-cta-link"
                 style="opacity: 0"
@@ -101,6 +104,7 @@ export default {
             }
         }
 
+        /*
         .nuxt-link-exact-active:not(.dont-underline) {
             display: none !important;
             // TODO: pamiętaj aby to wyłączyć w momencie gdy powrócisz do menu
@@ -108,6 +112,7 @@ export default {
                 @apply w-full;
             }
         }
+		*/
     }
 }
 </style>

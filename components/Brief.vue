@@ -25,7 +25,7 @@
                 <div class="form-row--fields">
                     <!-- fields in this form row -->
 
-                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 mt-10">
+                    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-2 lg:mt-10">
                         <div>
                             <input
                                 id="graphic"
@@ -123,23 +123,40 @@
                 <div class="form-row--fields">
                     <!-- fields in this form row -->
 
-                    <div class="flex items-center gap-7">
-                        <div class="mt-7 mb-3">
+                    <div class="flex flex-col lg:flex-row items-center lg:gap-7">
+                        <div class="lg:mt-7 mb-3">
                             <label class="label-email mr-4" for="email">
                                 <span>Podaj adres email</span>
                             </label>
-                            <input id="email" v-model="formData.email" placeholder="email" type="email" name="email" />
+                            <input
+                                id="email"
+                                v-model="formData.email"
+                                class="w-full lg:w-auto"
+                                placeholder="email"
+                                type="email"
+                                name="email"
+                            />
                         </div>
 
-                        <div class="mt-7 mb-3">
+                        <div class="lg:mt-7 mb-3">
                             <label class="label-email mr-4" for="phone">
                                 <span>Numer telefonu</span>
                             </label>
-                            <input id="phone" v-model="formData.phone" placeholder="telefon" type="text" name="phone" />
+                            <input
+                                id="phone"
+                                v-model="formData.phone"
+                                class="w-full lg:w-auto"
+                                placeholder="telefon"
+                                type="text"
+                                name="phone"
+                            />
                         </div>
                     </div>
 
                     <div :class="{ 'textarea-wrapper__is-send': sendOK }">
+                        <label class="label-email mr-4" for="tresc">
+                            <span>Treść wiadomośći</span>
+                        </label>
                         <textarea
                             id="tresc"
                             v-model="formData.msg"
@@ -152,15 +169,19 @@
                 </div>
 
                 <!-- submit -->
-                <div class="pl-10 mt-5 w-full flex items-start justify-between h-14">
+                <div
+                    class="lg:pl-10 mt-5 w-full flex flex-col lg:flex-row items-center lg:items-start justify-between h-14"
+                >
                     <div>
-                        <p class="text-sm">
+                        <p class="text-sm text-center lg:text-left">
                             Chciałbyś podpisać NDA ? napisz bezpośrednio na
                             <a class="link-with-undeline" href="mailto:info@j-filipiak.pl">info@j-filipiak.pl</a>
                         </p>
-                        <p class="text-xs mt-2">
+                        <p
+                            class="text-xs mt-2 flex flex-col items-center lg:items-start lg:flex-row mb-2 lg:mb-0 text-center lg:text-left"
+                        >
                             <toggle-button
-                                class="mr-2"
+                                class="mr-2 mb-2 lg:mb-0"
                                 :value="formData.isAcceptedFormPerms"
                                 color="#e9fb18"
                                 :sync="true"
@@ -328,7 +349,7 @@ export default {
     }
 }
 .vue-slider--wrapper {
-    @apply max-w-3xl mt-10 pl-14;
+    @apply lg:max-w-3xl lg:mt-10 lg:pl-14;
 }
 .vue-slider-process {
     background-color: #e9fb18 !important;
@@ -338,11 +359,12 @@ export default {
     border: 1px solid;
     height: 18px;
 }
+
 .vue-slider-dot-handle {
     background-color: #e9fb18 !important;
 }
 .brief {
-    @apply w-8/12 mx-auto pl-8 pr-8  pt-40 pb-40;
+    @apply w-full lg:w-8/12 mx-auto pl-8 pr-8  pt-20 pb-40 lg:pt-40 lg:pb-40;
 
     &--header {
         h2 {
@@ -351,7 +373,7 @@ export default {
     }
 
     &--tip {
-        @apply flex items-center pt-8 italic;
+        @apply flex items-center pt-8 italic pb-8 lg:pb-0;
 
         p {
             @apply pl-4 text-sm;
@@ -360,22 +382,11 @@ export default {
     }
 
     form {
-        @apply mt-20;
+        @apply lg:mt-20;
 
         .form-row {
             &--wrapper {
-                @apply relative pb-14 pt-14;
-
-                // &::before {
-                //     @apply hidden lg:block;
-                //     content: '';
-                //     width: 1px;
-                //     height: 67%;
-                //     background-color: #fff;
-                //     position: absolute;
-                //     left: 29px;
-                //     top: 54px;
-                // }
+                @apply relative lg:pb-14 pb-10 lg:pt-14;
             }
 
             &--header {
@@ -391,7 +402,7 @@ export default {
             }
 
             &--fields {
-                @apply pl-10;
+                @apply lg:pl-10;
             }
 
             small {
@@ -500,11 +511,11 @@ export default {
 
         textarea {
             color: #fff;
-            @apply p-8 text-lg font-semibold bg-transparent border mt-5;
+            @apply p-8 text-lg font-semibold bg-transparent border lg:mt-5;
         }
 
         .submit {
-            @apply bg-yellow text-dark-1 pt-3 pb-3 pl-12 pr-12 font-bold hover:opacity-80 w-36 h-12;
+            @apply bg-yellow text-dark-1 mt-5 lg:mt-0 pt-3 pb-3 pl-12 pr-12 font-bold hover:opacity-80 w-36 h-12;
         }
     }
 }

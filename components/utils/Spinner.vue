@@ -21,8 +21,8 @@ export default {
     --px-color-boxborder: transparent;
     --px-border-radius: 6px;
 
-    --qt-loadingcolor-main: 'black';
-    --qt-loadingcolor-secondary: 'black';
+    --qt-loadingcolor-main: 'black' !important;
+    --qt-loadingcolor-secondary: 'black' !important;
 }
 
 .px-app,

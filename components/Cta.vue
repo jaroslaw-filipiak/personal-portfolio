@@ -58,7 +58,7 @@
                     </svg>
                     <a href="mailto:info@j-filipiak.pl">info@j-filipiak.pl</a>
                 </div>
-                <div class="hidden">
+                <div>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="icon icon-tabler icon-tabler-briefcase"
@@ -77,7 +77,7 @@
                         <line x1="12" y1="12" x2="12" y2="12.01"></line>
                         <path d="M3 13a20 20 0 0 0 18 0"></path>
                     </svg>
-                    <a href="#">formularz kontaktowy</a>
+                    <NuxtLink to="/brief">formularz kontaktowy</NuxtLink>
                 </div>
             </div>
             <div class="cta--footer">
