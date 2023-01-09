@@ -11,10 +11,10 @@
             </h2>
             <div class="brief--tip">
                 <img src="~/assets/uploads/jf-avatar.png" alt="jaroslaw-filipiak-zdjecie" />
-                <p>Zadbałem o to abyś mógł wysłać go w mniej niż 10 minut</p>
+                <p>Nie zajmie ci to więcej niż pare minut</p>
             </div>
         </div>
-        <form novalidate class="brief-form" action="https://submit-form.com/cIhGWX1B">
+        <form class="brief-form" @submit.prevent="sendData">
             <!-- 01 -->
             <div class="form-row--wrapper">
                 <div class="form-row--header">
@@ -29,6 +29,7 @@
                         <div>
                             <input
                                 id="graphic"
+                                v-model="formData.projektowanieGraficzne"
                                 type="checkbox"
                                 name="projektowanie graficzne"
                                 value="tak - jest takie zapotrzebowanie"
@@ -40,6 +41,7 @@
                         <div>
                             <input
                                 id="proggraming"
+                                v-model="formData.programowanie"
                                 type="checkbox"
                                 name="programowanie"
                                 value="tak , potrzebna jest usługa programistyczna"
@@ -49,7 +51,13 @@
                             </label>
                         </div>
                         <div>
-                            <input id="www" type="checkbox" name="www" value="tak , potrzebuje strone www" />
+                            <input
+                                id="www"
+                                v-model="formData.wykonanieStronyWWW"
+                                type="checkbox"
+                                name="www"
+                                value="tak , potrzebuje strone www"
+                            />
                             <label for="www">
                                 <span>Wykonanie strony www</span>
                             </label>
@@ -69,9 +77,9 @@
 
                     <div class="vue-slider--wrapper">
                         <vue-slider
-                            v-model="value"
-                            :data="data"
-                            :data-value="'id'"
+                            v-model="formData.budget"
+                            :data="budgetData"
+                            :data-value="'name'"
                             :data-label="'name'"
                             :tooltip="'none'"
                             dot-size="32"
@@ -82,7 +90,100 @@
                 </div>
             </div>
 
-            <button class="submit mt-10" type="submit">Wyślij</button>
+            <!-- 03 -->
+            <div class="form-row--wrapper">
+                <div class="form-row--header">
+                    <div class="form-row--number">03</div>
+                    <div class="form-row--title">Szacowany czas trwania projektu</div>
+                </div>
+                <div class="form-row--fields">
+                    <!-- fields in this form row -->
+
+                    <div class="vue-slider--wrapper">
+                        <vue-slider
+                            v-model="formData.period"
+                            :data="periodData"
+                            :data-value="'name'"
+                            :data-label="'name'"
+                            :tooltip="'none'"
+                            dot-size="32"
+                            width="600"
+                            height="3"
+                        ></vue-slider>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04 -->
+            <div class="form-row--wrapper">
+                <div class="form-row--header">
+                    <div class="form-row--number">04</div>
+                    <div class="form-row--title">Pozostałe informacje</div>
+                </div>
+                <div class="form-row--fields">
+                    <!-- fields in this form row -->
+
+                    <div class="flex items-center gap-7">
+                        <div class="mt-7 mb-3">
+                            <label class="label-email mr-4" for="email">
+                                <span>Podaj adres email</span>
+                            </label>
+                            <input id="email" v-model="formData.email" placeholder="email" type="email" name="email" />
+                        </div>
+
+                        <div class="mt-7 mb-3">
+                            <label class="label-email mr-4" for="phone">
+                                <span>Numer telefonu</span>
+                            </label>
+                            <input id="phone" v-model="formData.phone" placeholder="telefon" type="text" name="phone" />
+                        </div>
+                    </div>
+
+                    <div :class="{ 'textarea-wrapper__is-send': sendOK }">
+                        <textarea
+                            id="tresc"
+                            v-model="formData.msg"
+                            class="w-full"
+                            name="tresc"
+                            cols="30"
+                            rows="10"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <!-- submit -->
+                <div class="pl-10 mt-5 w-full flex items-start justify-between h-14">
+                    <div>
+                        <p class="text-sm">
+                            Chciałbyś podpisać NDA ? napisz bezpośrednio na
+                            <a class="link-with-undeline" href="mailto:info@j-filipiak.pl">info@j-filipiak.pl</a>
+                        </p>
+                        <p class="text-xs mt-2">
+                            <toggle-button
+                                class="mr-2"
+                                :value="formData.isAcceptedFormPerms"
+                                color="#e9fb18"
+                                :sync="true"
+                                :labels="false"
+                                @change="formData.isAcceptedFormPerms = !formData.isAcceptedFormPerms"
+                            />
+
+                            Wyrażam zgodę na przetwarzanie tego formularza w celu kontaktu oraz przedstawienia oferty
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <div>
+                            <button class="submit" type="submit">
+                                <div class="brief-spinner">
+                                    <span v-if="isSending"><Spinner /></span>
+                                    <span v-else>{{ submitBTNvalue }}</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- submit -->
+            </div>
         </form>
     </div>
 </template>
@@ -91,7 +192,22 @@
 export default {
     data() {
         return {
-            data: [
+            sendOK: '',
+            isSending: false,
+            submitBTNvalue: 'Wyślij',
+            formData: {
+                isAcceptedFormPerms: true,
+                projektowanieGraficzne: false,
+                programowanie: false,
+                wykonanieStronyWWW: false,
+                budget: '3000 - 5000',
+                period: '2 - 3 miesiące',
+                email: '',
+                phone: '',
+                msg: '',
+            },
+
+            budgetData: [
                 {
                     id: 1,
                     name: '3000 - 5000',
@@ -109,12 +225,24 @@ export default {
                     name: '+ 20000',
                 },
             ],
-            example1: {
-                value: 20,
-            },
-            checkedNames: [],
-            sliderValue: 5000,
-            value: 30,
+            periodData: [
+                {
+                    id: 1,
+                    name: '1 miesiąc',
+                },
+                {
+                    id: 2,
+                    name: '2 - 3 miesiące',
+                },
+                {
+                    id: 3,
+                    name: '6 - 12 miesięcy',
+                },
+                {
+                    id: 4,
+                    name: '+ 12 miesięcy',
+                },
+            ],
         };
     },
 
@@ -130,18 +258,75 @@ export default {
         ],
     },
 
-    beforeDestroy() {
-        // this.$unregisterGSAPandSCROLL();
-    },
-    mounted() {
-        // this.$registerGSAPandSCROLL(false);
-    },
+    methods: {
+        clearForm() {
+            this.formData.isAcceptedFormPerms = false;
+            this.formData.projektowanieGraficzne = false;
+            this.formData.programowanie = false;
+            this.formData.wykonanieStronyWWW = false;
+            this.formData.budget = '3000 - 5000';
+            this.formData.period = '2 - 3 miesiące';
+            this.formData.email = '';
+            this.formData.phone = '';
+            this.formData.msg = '';
+        },
+        showStatus() {
+            this.submitBTNvalue = 'Wysłano!';
+            this.start();
+            setTimeout(() => {
+                this.submitBTNvalue = 'Wyślij';
+                this.stop();
+            }, 3000);
 
-    methods: {},
+            setTimeout(() => {
+                this.sendOK = false;
+            }, 5000);
+        },
+        sendData() {
+            this.isSending = true;
+            this.$axios
+                .post('https://submit-form.com/cIhGWX1B', this.formData)
+                .then(response => {
+                    if (response.status === 200) {
+                        this.isSending = false;
+                        this.sendOK = true;
+                        this.clearForm();
+                        this.showStatus();
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            // this.$axios.$post('https://submit-form.com/cIhGWX1B', this.formData);
+        },
+        start() {
+            this.$confetti.start();
+        },
+        stop() {
+            this.$confetti.stop();
+        },
+        showInfoInTextArea() {},
+    },
 };
 </script>
 
 <style lang="scss">
+.textarea-wrapper__is-send {
+    transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+    @apply relative;
+
+    &::after {
+        content: 'Wiadomość została wysłana!';
+        @apply w-full h-full absolute left-0 top-0 bg-yellow inline-flex items-center justify-center text-4xl text-dark-1 font-semibold;
+    }
+}
+.brief-spinner {
+    @apply flex items-center justify-center;
+    .px-griditem {
+        @apply transform scale-50 m-0;
+        transform-origin: center;
+    }
+}
 .vue-slider--wrapper {
     @apply max-w-3xl mt-10 pl-14;
 }
@@ -157,7 +342,7 @@ export default {
     background-color: #e9fb18 !important;
 }
 .brief {
-    @apply w-full pl-8 pr-8  pt-40 pb-40;
+    @apply w-8/12 mx-auto pl-8 pr-8  pt-40 pb-40;
 
     &--header {
         h2 {
@@ -179,27 +364,26 @@ export default {
 
         .form-row {
             &--wrapper {
-                @apply relative pb-10;
+                @apply relative pb-14 pt-14;
 
-                &::before {
-                    @apply hidden lg:block;
-                    content: '';
-                    width: 1px;
-                    height: 78%;
-                    background-color: #fff;
-                    // display: block;
-                    position: absolute;
-                    left: 20px;
-                    top: 42px;
-                }
+                // &::before {
+                //     @apply hidden lg:block;
+                //     content: '';
+                //     width: 1px;
+                //     height: 67%;
+                //     background-color: #fff;
+                //     position: absolute;
+                //     left: 29px;
+                //     top: 54px;
+                // }
             }
 
             &--header {
-                @apply flex flex-col items-start  lg:flex-row lg:items-center gap-3;
+                @apply flex flex-col items-start  lg:flex-row lg:items-center gap-3 pb-10;
             }
 
             &--number {
-                @apply text-3xl lg:text-4xl font-bold;
+                @apply text-3xl lg:text-5xl font-Atkinson font-normal;
             }
 
             &--title {
@@ -224,7 +408,22 @@ export default {
             }
         }
 
-        label {
+        label.vue-js-switch {
+            width: auto !important;
+            height: auto !important;
+            @apply p-0 border-none;
+            padding: 0 !important;
+
+            &:hover {
+                @apply bg-opacity-80;
+            }
+        }
+
+        .vue-js-switch .v-switch-core .v-switch-button[data-v-25adc6c0] {
+            background-color: #000 !important;
+        }
+
+        label:not(.label-email) {
             position: relative;
             cursor: pointer;
             @apply border border-white inline-flex items-center p-5;
@@ -248,7 +447,7 @@ export default {
             }
         }
 
-        label:before {
+        label:not(.label-email):before {
             content: '';
             -webkit-appearance: none;
 
@@ -291,8 +490,21 @@ export default {
             }
         }
 
+        input[type='email'] {
+            @apply bg-transparent border p-3;
+        }
+
+        input[type='text'] {
+            @apply bg-transparent border p-3;
+        }
+
+        textarea {
+            color: #fff;
+            @apply p-8 text-lg font-semibold bg-transparent border mt-5;
+        }
+
         .submit {
-            @apply bg-yellow text-dark-1 pt-3 pb-3 pl-8 pr-8 font-bold;
+            @apply bg-yellow text-dark-1 pt-3 pb-3 pl-12 pr-12 font-bold hover:opacity-80 w-36 h-12;
         }
     }
 }

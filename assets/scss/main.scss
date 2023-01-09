@@ -49,3 +49,23 @@ button:focus {
   opacity: 0;
 }
 
+.link-with-undeline {
+	@apply relative inline-block;
+
+	&::after {
+		content: '';
+		@apply w-0 bg-white block;
+		height: 2px;
+		transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+	}
+
+	&:hover {
+		&::after {
+			content: '';
+			@apply w-full bg-white block;
+			height: 2px;
+		}
+	}
+
+	
+}

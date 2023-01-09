@@ -71,11 +71,21 @@ export default {
     plugins: [
         { src: `~/plugins/smooth.client.js`, ssr: false },
         { src: `~/plugins/vue-slider.client.js`, ssr: false },
+        { src: `~/plugins/toggle.client.js`, ssr: false },
+        { src: `~/plugins/confetti.client.js`, ssr: false },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
-    components: true,
-
+    components: [
+        {
+            path: '~/components', // will get any components nested in let's say /components/test too
+            pathPrefix: false,
+        },
+        {
+            path: '~/utils', // will get any components nested in let's say /components/test too
+            pathPrefix: false,
+        },
+    ],
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/eslint
