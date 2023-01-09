@@ -45,6 +45,10 @@
 
 <script>
 export default {
+    mounted() {
+        // this.$registerGSAPandSCROLL();
+        // this.$showCTAlink();
+    },
     methods: {
         handleClick() {
             this.$store.commit('hideMenu');

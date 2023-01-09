@@ -119,7 +119,12 @@ export default {
         ],
     },
 
-    mounted() {},
+    beforeDestroy() {
+        // this.$unregisterGSAPandSCROLL();
+    },
+    mounted() {
+        // this.$registerGSAPandSCROLL(false);
+    },
 
     methods: {},
 };

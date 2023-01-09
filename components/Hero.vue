@@ -16,7 +16,21 @@
 </template>
 
 <script>
-export default {};
+// import gsap from 'gsap';
+
+export default {
+    mounted() {
+        // this.$registerGSAPandSCROLL();
+        // this.$enableGSAPandSCROLL();
+        // this.$changeJaroslawFilipiakToJF();
+    },
+    methods: {
+        changeLogoTextContent(text) {
+            const logo = document.querySelector('.gsap-change-fullname-to-sign');
+            logo.innerHTML = text;
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,8 @@
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
-    ssr: false,
+    // ssr: false,
+    mode: 'client',
 
     generate: {
         subFolders: false,
@@ -60,10 +61,17 @@ export default {
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: ['~/assets/scss/main.scss'],
+    css: [
+        '~/assets/css/vue-slider-component.css',
+        '~/assets/css/vue-slider-component-theme.css',
+        '~/assets/scss/main.scss',
+    ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [{ src: `~/plugins/smooth.js` }],
+    plugins: [
+        { src: `~/plugins/smooth.client.js`, ssr: false },
+        { src: `~/plugins/vue-slider.client.js`, ssr: false },
+    ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
