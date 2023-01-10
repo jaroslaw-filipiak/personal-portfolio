@@ -37,7 +37,7 @@
                         <path d="M15 16v4a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1h2"></path>
                         <path d="M10 18v.01"></path>
                     </svg>
-                    <a href="tel:+48 663 568 828"> +48 663 568 828</a>
+                    <a class="link-with-undeline" href="tel:+48 663 568 828"> +48 663 568 828</a>
                 </div>
                 <div>
                     <svg
@@ -56,7 +56,7 @@
                         <line x1="10" y1="14" x2="21" y2="3"></line>
                         <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5"></path>
                     </svg>
-                    <a href="mailto:info@j-filipiak.pl">info@j-filipiak.pl</a>
+                    <a class="link-with-undeline" href="mailto:info@j-filipiak.pl">info@j-filipiak.pl</a>
                 </div>
                 <div>
                     <svg
@@ -77,7 +77,7 @@
                         <line x1="12" y1="12" x2="12" y2="12.01"></line>
                         <path d="M3 13a20 20 0 0 0 18 0"></path>
                     </svg>
-                    <NuxtLink to="/brief">formularz kontaktowy</NuxtLink>
+                    <NuxtLink class="link-with-undeline" to="/brief">formularz kontaktowy</NuxtLink>
                 </div>
             </div>
             <div class="cta--footer">
