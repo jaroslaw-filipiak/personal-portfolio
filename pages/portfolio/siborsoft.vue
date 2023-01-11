@@ -36,6 +36,7 @@
                 </p>
             </div>
         </div>
+        <Cta />
     </SmoothScroll>
 </template>
 

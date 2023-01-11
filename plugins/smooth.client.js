@@ -45,6 +45,11 @@ export default (context, inject) => {
 
         // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
         ScrollTrigger.addEventListener('refresh', () => scroll.update());
+        window.addEventListener('DOMContentLoaded', () => scroll.update());
+
+        setTimeout(() => {
+            scroll.update();
+        }, 500);
 
         ScrollTrigger.defaults({ scroller: '.smooth-scroll' });
     });
