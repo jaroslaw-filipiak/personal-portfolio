@@ -1,7 +1,7 @@
 <template>
     <div class="template-default-wrapper">
         <TopBar />
-        <div class="smooth-scroll">
+        <div>
             <div class="content">
                 <Nuxt />
             </div>
@@ -31,15 +31,9 @@ export default {
     },
 
     mounted() {
-        this.$registerGSAPandSCROLL(false);
-        this.$changeJaroslawFilipiakToJF();
-        this.$showCTAlink();
-        // this.$registerGSAPandSCROLL();
-        // this.$test();
-        // this.$gsap();
-        // this.registerGSAPandScroll();
-        // this.gsapTopBarAnim();
-        // this.showCTAlink();
+        // this.$registerGSAPandSCROLL(true);
+        // this.$changeJaroslawFilipiakToJF();
+        // this.$showCTAlink();
     },
 
     methods: {

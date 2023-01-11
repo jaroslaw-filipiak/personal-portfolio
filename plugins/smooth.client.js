@@ -12,13 +12,18 @@ export default (context, inject) => {
         logo.innerHTML = text;
     };
 
+    inject('gsap', gsap);
+    inject('ScrollTrigger', ScrollTrigger);
+    inject('LocomotiveScroll', LocomotiveScroll);
+
     inject('registerGSAPandSCROLL', hasSmooth => {
-        console.log('register..');
         gsap.registerPlugin(ScrollTrigger);
+
         const scroll = new LocomotiveScroll({
             el: document.querySelector('.smooth-scroll'),
             smooth: hasSmooth,
         });
+
         scroll.on('scroll', ScrollTrigger.update);
 
         // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
@@ -46,6 +51,7 @@ export default (context, inject) => {
         //         trigger.kill();
         //     });
         // }
+        console.log(scroll);
         ScrollTrigger.disable();
 
         console.log('ScrollTrigger.kill;');

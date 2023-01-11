@@ -35,10 +35,7 @@
             <NuxtLink class="uppercase text-xs font-Atkinson hidden lg:block gsap-cta-link" style="opacity: 0" to="#cta"
                 >Bezpłatna konsultacja</NuxtLink
             >
-            <NuxtLink
-                class="uppercase text-xs font-Atkinson hidden lg:block gsap-cta-link"
-                style="opacity: 0"
-                to="/about"
+            <NuxtLink class="uppercase text-xs font-Atkinson hidden lg:block gsap-cta-link" to="/about"
                 >O mnie</NuxtLink
             >
             <!-- <Hamburger /> -->

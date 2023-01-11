@@ -1,6 +1,6 @@
 <template>
     <div class="offer">
-        <div class="section--title">
+        <div class="section--title" data-scroll data-scroll-speed="2">
             <h3>W czym mogę pomóc ?</h3>
             <img src="~/assets/uploads/smush.svg" alt="" />
         </div>
