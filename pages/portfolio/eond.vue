@@ -25,6 +25,46 @@
                     klienta ) , całość skompilowana za pomocą webpacka
                 </p>
             </div>
+            <div class="portfolio-item--info">
+                <h1 class="text-4xl mb-7">EoND</h1>
+                <p class="text-xl">
+                    Przedmiotem zlecenia było zakodowanie frontu. Projekt dosyć wymagający technicznie , zwłaszcza w
+                    zakresie animacji czy tez niektórych elementów , na stronie głównej wykorzystano bibliotekę paralax
+                    , accordiony są napisane autorsko , całośc pisana w scss , wykorzystano gridaCss , nie korzystano z
+                    żadnych frameworków typu bootstrap (nie korzystam z takich bibliotek jeżeli nie ma takiego wymogu od
+                    klienta ) , całość skompilowana za pomocą webpacka
+                </p>
+            </div>
+            <div class="portfolio-item--info">
+                <h1 class="text-4xl mb-7">EoND</h1>
+                <p class="text-xl">
+                    Przedmiotem zlecenia było zakodowanie frontu. Projekt dosyć wymagający technicznie , zwłaszcza w
+                    zakresie animacji czy tez niektórych elementów , na stronie głównej wykorzystano bibliotekę paralax
+                    , accordiony są napisane autorsko , całośc pisana w scss , wykorzystano gridaCss , nie korzystano z
+                    żadnych frameworków typu bootstrap (nie korzystam z takich bibliotek jeżeli nie ma takiego wymogu od
+                    klienta ) , całość skompilowana za pomocą webpacka
+                </p>
+            </div>
+            <div class="portfolio-item--info">
+                <h1 class="text-4xl mb-7">EoND</h1>
+                <p class="text-xl">
+                    Przedmiotem zlecenia było zakodowanie frontu. Projekt dosyć wymagający technicznie , zwłaszcza w
+                    zakresie animacji czy tez niektórych elementów , na stronie głównej wykorzystano bibliotekę paralax
+                    , accordiony są napisane autorsko , całośc pisana w scss , wykorzystano gridaCss , nie korzystano z
+                    żadnych frameworków typu bootstrap (nie korzystam z takich bibliotek jeżeli nie ma takiego wymogu od
+                    klienta ) , całość skompilowana za pomocą webpacka
+                </p>
+            </div>
+            <div class="portfolio-item--info">
+                <h1 class="text-4xl mb-7">EoND</h1>
+                <p class="text-xl">
+                    Przedmiotem zlecenia było zakodowanie frontu. Projekt dosyć wymagający technicznie , zwłaszcza w
+                    zakresie animacji czy tez niektórych elementów , na stronie głównej wykorzystano bibliotekę paralax
+                    , accordiony są napisane autorsko , całośc pisana w scss , wykorzystano gridaCss , nie korzystano z
+                    żadnych frameworków typu bootstrap (nie korzystam z takich bibliotek jeżeli nie ma takiego wymogu od
+                    klienta ) , całość skompilowana za pomocą webpacka
+                </p>
+            </div>
         </div>
     </SmoothScroll>
 </template>
