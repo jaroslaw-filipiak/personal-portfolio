@@ -40,14 +40,14 @@ button:focus {
 
 // default - global transiton
 
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.5s;
-}
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
+// .page-enter-active,
+// .page-leave-active {
+//   transition: opacity 0.5s;
+// }
+// .page-enter,
+// .page-leave-to {
+//   opacity: 0;
+// }
 
 .link-with-undeline {
 	@apply relative inline-block;

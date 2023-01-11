@@ -1,27 +1,29 @@
 <template>
-    <div class="portfolio-item">
-        <div class="portfolio-item--cover">
-            <a
-                class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
-                href="https://23knots.com/"
-                target="_blank"
-                :style="{
-                    backgroundColor: '#000000',
-                    color: '#ffffff',
-                }"
-            >
-                Zobacz stronę www</a
-            >
-            <img :src="IMG" alt="" />
+    <SmoothScroll>
+        <div class="portfolio-item">
+            <div class="portfolio-item--cover">
+                <a
+                    class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
+                    href="https://23knots.com/"
+                    target="_blank"
+                    :style="{
+                        backgroundColor: '#000000',
+                        color: '#ffffff',
+                    }"
+                >
+                    Zobacz stronę www</a
+                >
+                <img :src="IMG" alt="" />
+            </div>
+            <div class="portfolio-item--info">
+                <h1 class="text-4xl mb-7">23knots</h1>
+                <p class="text-xl">
+                    Całkiem przyjemna wizytówka. Zakres prac obejmował zarówno przygotowanie projektu graficznego jak i
+                    wdrożenie. Kodowanie bez użycia CMS, wykorzystano webpacka + scss + esnext
+                </p>
+            </div>
         </div>
-        <div class="portfolio-item--info">
-            <h1 class="text-4xl mb-7">23knots</h1>
-            <p class="text-xl">
-                Całkiem przyjemna wizytówka. Zakres prac obejmował zarówno przygotowanie projektu graficznego jak i
-                wdrożenie. Kodowanie bez użycia CMS, wykorzystano webpacka + scss + esnext
-            </p>
-        </div>
-    </div>
+    </SmoothScroll>
 </template>
 
 <script>
@@ -32,6 +34,10 @@ export default {
             IMG,
         };
     },
+    mounted() {
+        this.$registerLocomotiveScroll();
+    },
+    methods: {},
 };
 </script>
 <style>

@@ -1,7 +1,8 @@
 <template>
-    <div class="portfolio-item">
-        <div class="portfolio-item--cover">
-            <!-- <a
+    <SmoothScroll>
+        <div class="portfolio-item">
+            <div class="portfolio-item--cover">
+                <!-- <a
                 v-if="item.acf.behance_link"
                 class="absolute bottom-0 left-0 block p-4"
                 :href="`${item.acf.behance_link}`"
@@ -11,28 +12,29 @@
             >
                 {{ item.acf.behance_link }}</a
             > -->
-            <a
-                class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
-                href="https://www.grupalukasiuk.pl/"
-                target="_blank"
-                :style="{
-                    backgroundColor: '#282a2e',
-                    color: '#ffffff',
-                }"
-            >
-                Zobacz stronę www</a
-            >
-            <img :src="IMG" alt="" />
+                <a
+                    class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
+                    href="https://www.grupalukasiuk.pl/"
+                    target="_blank"
+                    :style="{
+                        backgroundColor: '#282a2e',
+                        color: '#ffffff',
+                    }"
+                >
+                    Zobacz stronę www</a
+                >
+                <img :src="IMG" alt="" />
+            </div>
+            <div class="portfolio-item--info">
+                <h1 class="text-4xl mb-7">Grupa Łukasiuk</h1>
+                <p class="text-xl">
+                    Przedmiotem zlecenia było zakodowanie warstwy front-end zgodnie z wytycznymi. Style pisane w .scss ,
+                    calośc kompilowana za pomocą webpacka , skrypty .js pisane w esnext. W niektórych elementach
+                    wykorzystano cssGrid , w projekcie jest także użyta biblioteka jQuery
+                </p>
+            </div>
         </div>
-        <div class="portfolio-item--info">
-            <h1 class="text-4xl mb-7">Grupa Łukasiuk</h1>
-            <p class="text-xl">
-                Przedmiotem zlecenia było zakodowanie warstwy front-end zgodnie z wytycznymi. Style pisane w .scss ,
-                calośc kompilowana za pomocą webpacka , skrypty .js pisane w esnext. W niektórych elementach
-                wykorzystano cssGrid , w projekcie jest także użyta biblioteka jQuery
-            </p>
-        </div>
-    </div>
+    </SmoothScroll>
 </template>
 
 <script>
@@ -42,6 +44,9 @@ export default {
         return {
             IMG,
         };
+    },
+    mounted() {
+        this.$registerLocomotiveScroll();
     },
 };
 </script>

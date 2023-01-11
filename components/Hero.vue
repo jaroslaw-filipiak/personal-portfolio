@@ -1,10 +1,8 @@
 <template>
     <div class="hero">
         <div>
-            <h1 data-scroll data-scroll-speed="2" class="text-xl lg:text-3xl mt-2 lg:font-bold">
-                Projektowanie stron internetowych
-            </h1>
-            <h2 data-scroll data-scroll-speed="4" class="text-5xl lg:text-7xl mt-2 font-normal">
+            <h1 class="text-xl lg:text-3xl mt-2 lg:font-bold">Projektowanie stron internetowych</h1>
+            <h2 class="text-5xl lg:text-7xl mt-2 font-normal">
                 Projektuje oraz wdrażam profesjonalne strony internetowe
                 <span>
                     <p>i nie tylko</p>
@@ -16,14 +14,8 @@
 </template>
 
 <script>
-// import gsap from 'gsap';
-
 export default {
-    mounted() {
-        // this.$registerGSAPandSCROLL();
-        // this.$enableGSAPandSCROLL();
-        // this.$changeJaroslawFilipiakToJF();
-    },
+    mounted() {},
     methods: {
         changeLogoTextContent(text) {
             const logo = document.querySelector('.gsap-change-fullname-to-sign');

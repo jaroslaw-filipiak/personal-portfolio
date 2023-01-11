@@ -8,6 +8,11 @@ export default {
         subFolders: false,
     },
 
+    app: {
+        pageTransition: false,
+        layoutTransition: false,
+    },
+
     head: {
         title: 'Projektowanie stron www -  tylko profesjonalne strony firmowe ',
         'google-site-verification': 'W-qUXQGw2KAvWh5Y72PI2PLI1aY6ZcwGUbApZBoQdyM',
@@ -76,7 +81,49 @@ export default {
         '@nuxtjs/tailwindcss',
         '@nuxtjs/google-analytics',
         '@nuxtjs/google-fonts',
+        'nuxt-gsap-module',
     ],
+
+    gsap: {
+        /* Module Options */
+        extraPlugins: {
+            scrollTo: true,
+            scrollTrigger: true,
+        },
+        extraEases: {
+            expoScaleEase: true,
+        },
+    },
+
+    pageTransition: {
+        name: 'page',
+        mode: 'out-in',
+        css: false,
+
+        beforeEnter(el) {
+            this.$gsap.set(el, {
+                opacity: 0,
+            });
+        },
+
+        enter(el, done) {
+            this.$gsap.to(el, {
+                opacity: 1,
+                duration: 1,
+                ease: 'power2.inOut',
+                onComplete: done,
+            });
+        },
+
+        leave(el, done) {
+            this.$gsap.to(el, {
+                opacity: 0,
+                duration: 0.5,
+                ease: 'power2.inOut',
+                onComplete: done,
+            });
+        },
+    },
 
     googleFonts: {
         download: true,

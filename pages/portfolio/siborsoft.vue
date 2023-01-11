@@ -1,7 +1,8 @@
 <template>
-    <div class="portfolio-item">
-        <div class="portfolio-item--cover">
-            <!-- <a
+    <SmoothScroll>
+        <div class="portfolio-item">
+            <div class="portfolio-item--cover">
+                <!-- <a
                 v-if="item.acf.behance_link"
                 class="absolute bottom-0 left-0 block p-4"
                 :href="`${item.acf.behance_link}`"
@@ -11,29 +12,31 @@
             >
                 {{ item.acf.behance_link }}</a
             > -->
-            <a
-                class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
-                href="http://siborsoft.com/"
-                target="_blank"
-                :style="{
-                    backgroundColor: '#d78605',
-                    color: '#ffffff',
-                }"
-            >
-                Zobacz stronę www</a
-            >
-            <img :src="siborsoftIMG" alt="" />
+                <a
+                    class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
+                    href="http://siborsoft.com/"
+                    target="_blank"
+                    :style="{
+                        backgroundColor: '#d78605',
+                        color: '#ffffff',
+                    }"
+                >
+                    Zobacz stronę www</a
+                >
+                <img :src="siborsoftIMG" alt="" />
+            </div>
+            <div class="portfolio-item--info">
+                <h1 class="text-4xl mb-7">Siborsoft</h1>
+                <p class="text-xl">
+                    Dosyć prosta i niepozorna strona www ale mimo wyglądu szablonowego została ona najpierw
+                    zaprojektowana w figmie. Większość stron nawet tych najmniejszych i najprostszych projektuje mimo
+                    wszystko od białej kartki.<br /><br />Bardzo ciekawym mechanizmem jest zastosowanie html5history API
+                    , dzięki czemu strona się nie odświeża w momencie gdy przechodzimy do innych podstron , strona
+                    oparta o WP + ACF
+                </p>
+            </div>
         </div>
-        <div class="portfolio-item--info">
-            <h1 class="text-4xl mb-7">Siborsoft</h1>
-            <p class="text-xl">
-                Dosyć prosta i niepozorna strona www ale mimo wyglądu szablonowego została ona najpierw zaprojektowana w
-                figmie. Większość stron nawet tych najmniejszych i najprostszych projektuje mimo wszystko od białej
-                kartki.<br /><br />Bardzo ciekawym mechanizmem jest zastosowanie html5history API , dzięki czemu strona
-                się nie odświeża w momencie gdy przechodzimy do innych podstron , strona oparta o WP + ACF
-            </p>
-        </div>
-    </div>
+    </SmoothScroll>
 </template>
 
 <script>
@@ -43,6 +46,9 @@ export default {
         return {
             siborsoftIMG,
         };
+    },
+    mounted() {
+        this.$registerLocomotiveScroll();
     },
 };
 </script>

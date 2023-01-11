@@ -1,7 +1,8 @@
 <template>
-    <div class="portfolio-item">
-        <div class="portfolio-item--cover">
-            <!-- <a
+    <SmoothScroll>
+        <div class="portfolio-item">
+            <div class="portfolio-item--cover">
+                <!-- <a
                 v-if="item.acf.behance_link"
                 class="absolute bottom-0 left-0 block p-4"
                 :href="`${item.acf.behance_link}`"
@@ -11,31 +12,33 @@
             >
                 {{ item.acf.behance_link }}</a
             > -->
-            <a
-                class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
-                href="https://promise4cloud.com/"
-                target="_blank"
-                :style="{
-                    backgroundColor: '#dd3f3f',
-                    color: '#ffffff',
-                }"
-            >
-                Zobacz stronę www</a
-            >
-            <img :src="IMG" alt="" />
+                <a
+                    class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
+                    href="https://promise4cloud.com/"
+                    target="_blank"
+                    :style="{
+                        backgroundColor: '#dd3f3f',
+                        color: '#ffffff',
+                    }"
+                >
+                    Zobacz stronę www</a
+                >
+                <img :src="IMG" alt="" />
+            </div>
+            <div class="portfolio-item--info">
+                <h1 class="text-4xl mb-7">promise4cloud</h1>
+                <p class="text-xl">
+                    Projekt graficzny został wykonany autorsko a następnie wdrożony do systemu WordPress .
+                </p>
+                <p>
+                    W pełni profesjonalne środowisko z wersjami : dev , stagging oraz prod , całość synchronizowana za
+                    pomocą ci/cd , które buduje stronę , oraz czyści cloudflarowe cache.<br />Layout zbudowany w oparciu
+                    o beaver builder + acf + autorskie bloki do beaver buildera +motyw pisany w oparciu o vite.js +
+                    tailwind
+                </p>
+            </div>
         </div>
-        <div class="portfolio-item--info">
-            <h1 class="text-4xl mb-7">promise4cloud</h1>
-            <p class="text-xl">
-                Projekt graficzny został wykonany autorsko a następnie wdrożony do systemu WordPress .
-            </p>
-            <p>
-                W pełni profesjonalne środowisko z wersjami : dev , stagging oraz prod , całość synchronizowana za
-                pomocą ci/cd , które buduje stronę , oraz czyści cloudflarowe cache.<br />Layout zbudowany w oparciu o
-                beaver builder + acf + autorskie bloki do beaver buildera +motyw pisany w oparciu o vite.js + tailwind
-            </p>
-        </div>
-    </div>
+    </SmoothScroll>
 </template>
 
 <script>
@@ -45,6 +48,9 @@ export default {
         return {
             IMG,
         };
+    },
+    mounted() {
+        this.$registerLocomotiveScroll();
     },
 };
 </script>

@@ -1,30 +1,32 @@
 <template>
-    <div class="portfolio-item">
-        <div class="portfolio-item--cover">
-            <a
-                class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
-                href="https://eond.eu/"
-                target="_blank"
-                :style="{
-                    backgroundColor: '#1a63cb',
-                    color: '#ffffff',
-                }"
-            >
-                Zobacz stronę www</a
-            >
-            <img :src="IMG" alt="" />
+    <SmoothScroll>
+        <div class="portfolio-item">
+            <div class="portfolio-item--cover">
+                <a
+                    class="absolute bottom-0 left-0 block p-4 hover:opacity-85"
+                    href="https://eond.eu/"
+                    target="_blank"
+                    :style="{
+                        backgroundColor: '#1a63cb',
+                        color: '#ffffff',
+                    }"
+                >
+                    Zobacz stronę www</a
+                >
+                <img :src="IMG" alt="" />
+            </div>
+            <div class="portfolio-item--info">
+                <h1 class="text-4xl mb-7">EoND</h1>
+                <p class="text-xl">
+                    Przedmiotem zlecenia było zakodowanie frontu. Projekt dosyć wymagający technicznie , zwłaszcza w
+                    zakresie animacji czy tez niektórych elementów , na stronie głównej wykorzystano bibliotekę paralax
+                    , accordiony są napisane autorsko , całośc pisana w scss , wykorzystano gridaCss , nie korzystano z
+                    żadnych frameworków typu bootstrap (nie korzystam z takich bibliotek jeżeli nie ma takiego wymogu od
+                    klienta ) , całość skompilowana za pomocą webpacka
+                </p>
+            </div>
         </div>
-        <div class="portfolio-item--info">
-            <h1 class="text-4xl mb-7">EoND</h1>
-            <p class="text-xl">
-                Przedmiotem zlecenia było zakodowanie frontu. Projekt dosyć wymagający technicznie , zwłaszcza w
-                zakresie animacji czy tez niektórych elementów , na stronie głównej wykorzystano bibliotekę paralax ,
-                accordiony są napisane autorsko , całośc pisana w scss , wykorzystano gridaCss , nie korzystano z
-                żadnych frameworków typu bootstrap (nie korzystam z takich bibliotek jeżeli nie ma takiego wymogu od
-                klienta ) , całość skompilowana za pomocą webpacka
-            </p>
-        </div>
-    </div>
+    </SmoothScroll>
 </template>
 
 <script>
@@ -34,6 +36,9 @@ export default {
         return {
             IMG,
         };
+    },
+    mounted() {
+        this.$registerLocomotiveScroll();
     },
 };
 </script>

@@ -106,8 +106,6 @@ export default {
             eond: eondThumb,
             knots: knotsThumb,
             whatAbout: whatAboutThumb,
-            scroll: null,
-            ScrollTrigger: null,
         };
     },
 
@@ -123,60 +121,31 @@ export default {
         ],
     },
 
-    beforeDestroy() {
-        this.scroll.destroy();
-    },
     mounted() {
-        this.locomotiveScrollInit();
-        // this.changeJaroslawFilipiakToJF();
+        this.$registerLocomotiveScroll();
+        // this.boxRotation();
+        // this.animateOnScroll();
     },
 
     methods: {
-        locomotiveScrollInit() {
-            this.$gsap.registerPlugin(this.$ScrollTrigger);
-
-            this.scroll = new this.$LocomotiveScroll({
-                el: document.querySelector('.smooth-scroll'),
-                smooth: true,
-
-                getDirection: true,
-            });
-
-            this.scroll.on('scroll', this.$ScrollTrigger.update);
-            // this.scroll.stop();
-
-            // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-            this.$ScrollTrigger.scrollerProxy('.smooth-scroll', {
-                scrollTop(value) {
-                    return arguments.length ? this.scroll.scrollTo(value, 0, 0) : this.scroll.scroll.instance.scroll.y;
-                }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-                getBoundingClientRect() {
-                    return {
-                        top: 0,
-                        left: 0,
-                        width: window.innerWidth,
-                        height: window.innerHeight,
-                    };
-                },
-                // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-                pinType: document.querySelector('.smooth-scroll').style.transform ? 'transform' : 'fixed',
-            });
+        boxRotation() {
+            const gsap = this.$gsap;
+            gsap.to('.hero h1', { rotation: 27, x: 100, duration: 1 });
         },
-        changeJaroslawFilipiakToJF() {
-            // const gsap = this.$gsap;
-            // gsap.to('.hero h2', {
-            //     opacity: 1,
-            //     backgroundColor: 'red',
-            //     immediateRender: false,
-            //     // scrollTrigger: {
-            //     //     trigger: '.offer',
-            //     //     scroller: '.smooth-scroll',
-            //     //     scrub: true,
-            //     //     start: 'top bottom',
-            //     //     end: 'top 90%',
-            //     //     markers: true,
-            //     // },
-            // });
+        animateOnScroll() {
+            // this.$gsap.to(window, { duration: 2, scrollTo: 1000 });
+
+            this.$gsap.to('.offer', {
+                opacity: 1,
+                // ease: 'Power1.easeInOut',
+                scrollTrigger: {
+                    trigger: '.offer',
+                    // pin: true,
+                    end: 'bottom',
+                    scrub: true,
+                    markers: false,
+                },
+            });
         },
     },
 };
