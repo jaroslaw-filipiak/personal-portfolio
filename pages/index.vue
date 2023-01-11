@@ -123,8 +123,10 @@ export default {
 
     mounted() {
         this.$registerLocomotiveScroll();
+        // https://github.com/locomotivemtl/locomotive-scroll/issues/220
         // this.boxRotation();
         // this.animateOnScroll();
+        this.animateLines();
     },
 
     methods: {
@@ -143,6 +145,21 @@ export default {
                     trigger: '.offer',
                     // pin: true,
                     end: 'bottom',
+                    scrub: true,
+                    markers: false,
+                },
+            });
+        },
+        animateLines() {
+            this.$gsap.to('html', {
+                '--offer-line-width': '100%',
+                // borderWidth: 100,
+                opacity: 1,
+                // ease: 'Power1.easeInOut',
+                scrollTrigger: {
+                    trigger: '.offer',
+                    // pin: true,
+                    end: 'top 10%',
                     scrub: true,
                     markers: false,
                 },

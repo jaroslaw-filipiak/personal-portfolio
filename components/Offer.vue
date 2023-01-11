@@ -70,8 +70,19 @@ export default {};
 .offer {
     @apply w-full lg:w-10/12 mx-auto pl-8 pr-8 pt-20;
 
+    html {
+        --offer-line-width: 10%;
+    }
+
     &--row {
-        @apply border-t flex flex-col lg:flex-row items-start lg:items-center p-8;
+        @apply flex flex-col lg:flex-row items-start lg:items-center p-8 relative;
+
+        &:before {
+            content: '';
+            @apply block left-0 top-0 absolute bg-white;
+            height: 1px;
+            width: var(--offer-line-width);
+        }
 
         h4 {
             @apply text-3xl mb-10;
