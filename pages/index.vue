@@ -136,6 +136,7 @@ export default {
             // this.$gsap.to(window, { duration: 2, scrollTo: 1000 });
 
             this.$gsap.to('.offer', {
+                backgroundColor: 'red',
                 opacity: 1,
                 // ease: 'Power1.easeInOut',
                 scrollTrigger: {
