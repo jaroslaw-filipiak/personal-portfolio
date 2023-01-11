@@ -115,7 +115,7 @@ export default {};
     &--header {
         @apply flex justify-center pb-8 mb-5;
         h4 {
-            @apply text-4xl lg:text-6xl mb-10 mt-5 max-w-4xl;
+            @apply text-4xl lg:text-6xl mb-10 mt-5 max-w-4xl text-white;
 
             span {
                 @apply relative inline-block;
@@ -128,7 +128,7 @@ export default {};
     }
 
     &--middle {
-        @apply flex flex-col lg:flex-row items-center justify-center pt-8 pb-8 lg:pt-20 lg:pb-20 lg:pl-8 lg:pr-8  gap-4 lg:gap-12;
+        @apply flex flex-col lg:flex-row items-center justify-center pt-8 pb-8 lg:pt-20 lg:pb-20 lg:pl-8 lg:pr-8  gap-4 lg:gap-12 text-white;
         border-top: 1px solid rgba(255, 255, 255, 0.5);
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 
@@ -145,7 +145,7 @@ export default {};
         @apply flex flex-col lg:flex-row items-start justify-between gap-3 p-8;
 
         p {
-            @apply w-full lg:w-3/12 lg:text-xl;
+            @apply w-full lg:w-3/12 lg:text-xl text-white;
         }
     }
 }

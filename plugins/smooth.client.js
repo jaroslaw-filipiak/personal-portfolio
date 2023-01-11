@@ -20,6 +20,8 @@ export default (context, inject) => {
         const scroll = new LocomotiveScroll({
             el: document.querySelector('.smooth-scroll'),
             smooth: true,
+            getSpeed: true,
+            getDirection: true,
         });
 
         scroll.on('scroll', ScrollTrigger.update);
@@ -43,6 +45,7 @@ export default (context, inject) => {
 
         // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
         ScrollTrigger.addEventListener('refresh', () => scroll.update());
+
         ScrollTrigger.defaults({ scroller: '.smooth-scroll' });
     });
 
