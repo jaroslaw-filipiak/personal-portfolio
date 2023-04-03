@@ -1,199 +1,26 @@
 <template>
-    <SmoothScroll>
-        <div class="page-content">
-            <Hero />
-            <Offer />
-
-            <div class="w-full">
-                <div class="section--title w-10/12 mx-auto mt-36">
-                    <h3>Wybrane realizacje</h3>
-                    <img src="~/assets/uploads/smush.svg" alt="" />
-                </div>
-                <div class="items">
-                    <!-- siborsoft -->
-                    <NuxtLink
-                        prefetch
-                        :to="`/portfolio/siborsoft`"
-                        class="item hover:opacity-85"
-                        :style="{
-                            backgroundImage: `url(${siborsoft})`,
-                        }"
-                    >
-                        <p class="bg-dark-2 p-1 pl-5 pr-5">Siborsoft</p>
-                    </NuxtLink>
-
-                    <!-- promise -->
-                    <NuxtLink
-                        prefetch
-                        :to="`/portfolio/promise4cloud`"
-                        class="item hover:opacity-85"
-                        :style="{
-                            backgroundImage: `url(${promise})`,
-                        }"
-                    >
-                        <p class="bg-dark-2 p-1 pl-5 pr-5">Promise4Cloud</p>
-                    </NuxtLink>
-
-                    <!-- lukasiuk -->
-                    <NuxtLink
-                        prefetch
-                        :to="`/portfolio/lukasiuk`"
-                        class="item hover:opacity-85"
-                        :style="{
-                            backgroundImage: `url(${lukasiuk})`,
-                        }"
-                    >
-                        <p class="bg-dark-2 p-1 pl-5 pr-5">Grupa Łukasiuk</p>
-                    </NuxtLink>
-
-                    <!-- eond -->
-                    <NuxtLink
-                        prefetch
-                        :to="`/portfolio/eond`"
-                        class="item hover:opacity-85"
-                        :style="{
-                            backgroundImage: `url(${eond})`,
-                        }"
-                    >
-                        <p class="bg-dark-2 p-1 pl-5 pr-5">eond</p>
-                    </NuxtLink>
-
-                    <!-- 23knots -->
-                    <NuxtLink
-                        prefetch
-                        :to="`/portfolio/23knots`"
-                        class="item hover:opacity-85"
-                        :style="{
-                            backgroundImage: `url(${knots})`,
-                        }"
-                    >
-                        <p class="bg-dark-2 p-1 pl-5 pr-5">23 knots</p>
-                    </NuxtLink>
-
-                    <!-- what about -->
-                    <NuxtLink
-                        prefetch
-                        :to="`/portfolio/whatabout`"
-                        class="item hover:opacity-85"
-                        :style="{
-                            backgroundImage: `url(${whatAbout})`,
-                        }"
-                    >
-                        <p class="bg-dark-2 p-1 pl-5 pr-5">whatabout</p>
-                    </NuxtLink>
-                </div>
-            </div>
-
-            <Cta />
-        </div>
-    </SmoothScroll>
+  <SmoothScroll>
+    <div class="page-content">
+      <Hero />
+      <Offer />
+      <Portfolio heading="Wybrane realizacje" hasImg />
+      <Cta />
+    </div>
+  </SmoothScroll>
 </template>
 
-<script>
-import siborsoftThumb from 'assets/uploads/2021/10/siborsoft_thumb.jpg';
-import promiseThumb from 'assets/uploads/2021/10/promise4cloud_thumb.jpg';
-import lukasiukThumb from 'assets/uploads/2020/07/lukasiuk-thumb.jpg';
-import eondThumb from 'assets/uploads/2020/07/eond-thumb.jpg';
-import knotsThumb from 'assets/uploads/2020/03/23knots-thumbnail.jpg';
-import whatAboutThumb from 'assets/uploads/2020/03/whatabout.jpg';
-
-export default {
-    data() {
-        return {
-            siborsoft: siborsoftThumb,
-            promise: promiseThumb,
-            lukasiuk: lukasiukThumb,
-            eond: eondThumb,
-            knots: knotsThumb,
-            whatAbout: whatAboutThumb,
-        };
-    },
-
-    head: {
-        title: 'Projektowanie stron www -  tylko profesjonalne strony firmowe',
-        meta: [
-            {
-                hid: 'description',
-                name: 'description',
-                content:
-                    'Profesjonalne strony www. 10 lat doświadczenia. Nowoczesne strony zoptymalizowane pod Google. Optymalizacja UX. Bezpłatna Wycena - Poproś o indywidualną wycenę!. Szybki kontakt',
-            },
-        ],
-    },
-
-    mounted() {
-        this.$registerLocomotiveScroll();
-        // https://github.com/locomotivemtl/locomotive-scroll/issues/220
-        // this.boxRotation();
-        // this.animateOnScroll();
-        this.animateLines();
-    },
-
-    methods: {
-        boxRotation() {
-            const gsap = this.$gsap;
-            gsap.to('.hero h1', { rotation: 27, x: 100, duration: 1 });
-        },
-        animateOnScroll() {
-            // this.$gsap.to(window, { duration: 2, scrollTo: 1000 });
-
-            this.$gsap.to('.offer', {
-                backgroundColor: 'red',
-                opacity: 1,
-                // ease: 'Power1.easeInOut',
-                scrollTrigger: {
-                    trigger: '.offer',
-                    // pin: true,
-                    end: 'bottom',
-                    scrub: true,
-                    markers: false,
-                },
-            });
-        },
-        animateLines() {
-            this.$gsap.to('html', {
-                '--offer-line-width': '100%',
-                // borderWidth: 100,
-                opacity: 1,
-                // ease: 'Power1.easeInOut',
-                scrollTrigger: {
-                    trigger: '.offer',
-                    // pin: true,
-                    end: 'top 10%',
-                    scrub: true,
-                    markers: false,
-                },
-            });
-        },
-    },
-};
-</script>
+<script setup></script>
 
 <style lang="scss">
-.page-content {
-    @apply min-h-screen flex flex-col items-start  text-white;
-}
+  .page-content {
+    @apply min-h-screen flex flex-col items-start text-white;
+    margin-bottom: 600px;
+  }
 
-.header {
+  .header {
     @apply pl-8;
-}
-.pending {
+  }
+  .pending {
     @apply w-screen h-screen fixed left-0 top-0 flex items-center justify-center bg-dark-2;
-}
-.item {
-    @apply bg-dark-1  border-dark-2 w-4/5 h-96 sm:h-128  md:h-144  lg:w-96 lg:h-96  2xl:w-128 2xl:h-128 flex flex-col items-start justify-end bg-cover bg-no-repeat pb-3 pl-3 hover:opacity-90;
-
-    p {
-        @apply hidden;
-    }
-
-    &:hover {
-        p {
-            @apply block;
-        }
-    }
-}
-.items {
-    @apply w-full min-w-full flex flex-wrap justify-center items-center sm:-mx-2 mb-8 mt-20 lg:justify-center;
-}
+  }
 </style>

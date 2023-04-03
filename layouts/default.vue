@@ -3,6 +3,7 @@
         <TopBar />
         <div>
             <div class="content">
+                <Footer />
                 <Nuxt />
             </div>
             <Menu />

@@ -4,6 +4,7 @@
             <h1 class="text-xl lg:text-3xl mt-2 lg:font-bold">Projektowanie stron internetowych</h1>
             <h2 class="text-5xl lg:text-7xl mt-2 font-normal">
                 Projektuje oraz wdrażam profesjonalne strony internetowe
+
                 <span>
                     <p>i nie tylko</p>
                     <img src="~/assets/uploads/smush-1.svg" alt="" />

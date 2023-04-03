@@ -27,6 +27,7 @@ export default {
     },
 
     beforeDestroy() {},
+
     mounted() {
         this.$registerLocomotiveScroll();
     },

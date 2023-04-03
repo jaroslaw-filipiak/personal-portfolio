@@ -1,9 +1,13 @@
 <template>
-    <div class="smooth-scroll">
-        <slot></slot>
-    </div>
+  <div class="smooth-scroll">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
-export default {};
+  export default {};
 </script>
+
+<style>
+  
+</style>
